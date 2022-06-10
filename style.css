@@ -1,0 +1,34 @@
+.instruments {
+    display:flex;
+    flex-direction: row;
+}
+
+.instruments .colors {
+    height: 50px;
+    padding: 25px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 50%;
+    display: inline-block;
+    display: flex;
+}
+
+canvas {
+    cursor: pointer;
+    box-shadow: -3px 2px 9px 6px black;
+}
+
+.color_selector {
+    width: 50px;
+    height: 50px;
+    display: flex;
+}
+
+.button {
+    padding: 15px;
+    margin-top: 26px;
+}
+
+.range {
+    background-color: blue;
+}

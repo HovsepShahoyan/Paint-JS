@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name= "viewport" content=""width=device-width, initial-scale="1.0">
+        <title>My Paint</title>
+         
+    </head>
+    <body>
+        <canvas id = "canvas" height="300" width="300"></canvas>
+            <div class = "instruments">
+                <button onclick = "clear1()" type = "button"  class = "button">Clear</button>
+                <div class = "colors">
+                    <button onclick = "blue()" class = "colors" style = "background-color: blue;"></button>
+                    <button onclick = "green()" class = "colors" style = "background-color: rgb(166, 255, 0);"></button>
+                    <button onclick = "purple()" class = "colors" style = "background-color: rgb(255, 0, 221);"></button>
+                    <button onclick = "black()" class = "colors" style = "background-color: rgb(0, 0, 0);"></button>
+                    <input oninput = "range(this.value)" id = "range" type = "range" min = "1" max = "100" value = "5">
+                    <input oninput = "colors(this.value)" type = "color" class = "color_selector">
+                    <script>
+                        function blue() {
+                            pen_color = "blue";
+                        }
+                        function green() {
+                            pen_color = "rgb(166, 255, 0)";
+                        }
+                        function purple() {
+                            pen_color = "rgb(255, 0, 221)";
+                        }
+                        function black() {
+                            pen_color = "black";
+                        }
+                        function colors(value) {
+                            pen_color = value;
+                        }
+                        function range(value) {
+                            context.lineWidth = value;
+                        }
+                    </script>
+                </div>
+            </div>
+    </body>
+    <script src="main.js"></script>
+</html>
