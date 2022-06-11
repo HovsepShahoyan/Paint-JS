@@ -6,18 +6,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name= "viewport" content=""width=device-width, initial-scale="1.0">
         <title>My Paint</title>
-         
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div id="all">
         <canvas id = "canvas" height="300" width="300"></canvas>
+        <p class="text">Color Selector</p>
             <div class = "instruments">
-                <button onclick = "clear1()" type = "button"  class = "button">Clear</button>
+                
                 <div class = "colors">
                     <button onclick = "blue()" class = "colors" style = "background-color: blue;"></button>
                     <button onclick = "green()" class = "colors" style = "background-color: rgb(166, 255, 0);"></button>
                     <button onclick = "purple()" class = "colors" style = "background-color: rgb(255, 0, 221);"></button>
-                    <button onclick = "black()" class = "colors" style = "background-color: rgb(0, 0, 0);"></button>
-                    <input oninput = "range(this.value)" id = "range" type = "range" min = "1" max = "100" value = "5">
+                    <button onclick = "black()" class = "colors" style = "background-color: white;"></button>
                     <input oninput = "colors(this.value)" type = "color" class = "color_selector">
                     <script>
                         function blue() {
@@ -38,9 +41,27 @@
                         function range(value) {
                             context.lineWidth = value;
                         }
-                    </script>
+                    </script>	
                 </div>
             </div>
+            <p class="text">Instruments</p>
+
+            <div class="bottom">
+            <button onclick = "clear1()" type = "button"  class = "button">Clear</button>
+                <div class="middle">
+                    <div class="slider-container">
+                        <span class="bar"><span class="fill"></span></span>
+                        <input oninput = "range(this.value)"   id="slider" class="slider" type="range"  min = "1" max = "10" value = "2">
+                    </div>
+                </div>
+        </div>
+        </div>
+
+        <div style="display:flex ; justify-content: space-around;margin-top: 20px; align-items: center;">
+            <span id="hos">By Hovsep Shahoyan</span>
+            <input type="checkbox" id="switch"  onclick="mode()"/><label for="switch">Toggle</label>
+        </div>
+
     </body>
     <script src="main.js"></script>
 </html>
